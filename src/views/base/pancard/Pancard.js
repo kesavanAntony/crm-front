@@ -3,6 +3,7 @@ import { Col, Row, } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 
 import Table from 'react-bootstrap/Table'
+import {logo} from "../pancard/uti.png"
 
 const Pancard = () => {
   return (
