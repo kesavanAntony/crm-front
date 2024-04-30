@@ -41,7 +41,7 @@ const LoadWallet = () => {
     },[])
 
     const listLoadWallet = () =>{
-      axios.get('https://crm-backend-blush-nine.vercel.app/list/loadWallet')
+      axios.get('https://crm-backend-wine.vercel.app/list/loadWallet')
       .then((res)=>{
       const result = res.data;
       updateList(result)
@@ -88,7 +88,7 @@ const LoadWallet = () => {
     if (Object.keys(validateErrors).length === 0 ) {
 
       axios
-        .post('https://crm-backend-blush-nine.vercel.app/order', value)
+        .post('https://crm-backend-wine.vercel.app/order', value)
         .then((res) => {
           const result = res.data
           console.log(result)
@@ -106,7 +106,7 @@ const LoadWallet = () => {
               const body = {
                 ...response,
               }
-              const validateRes = await fetch('https://crm-backend-blush-nine.vercel.app/order/validate', {
+              const validateRes = await fetch('https://crm-backend-wine.vercel.app/order/validate', {
                 method: 'POST',
                 body: JSON.stringify(body),
                 headers: {
@@ -117,7 +117,7 @@ const LoadWallet = () => {
               console.log(jsonRes)
              if(jsonRes.msg === "success"){
              
-               axios.post("https://crm-backend-blush-nine.vercel.app/loadwallet",value)
+               axios.post("https://crm-backend-wine.vercel.app/loadwallet",value)
                .then((response)=>{
                const result = response.data;
                if(result.message === "success"){
@@ -192,7 +192,7 @@ if (Object.keys(validateErrors).length === 0 ) {
 
 
   axios
-  .post('https://crm-backend-blush-nine.vercel.app/payment/link', value)
+  .post('https://crm-backend-wine.vercel.app/payment/link', value)
   .then((res) => {
     const result = res.data
    alert("payment link sent...")

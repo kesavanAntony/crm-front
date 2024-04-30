@@ -69,7 +69,7 @@ const CashfreePG2= () => {
     if (Object.keys(validateErrors).length === 0 ) {
 
       axios
-        .post('https://crm-backend-blush-nine.vercel.app/order', value)
+        .post('https://crm-backend-wine.vercel.app/order', value)
         .then((res) => {
           const result = res.data
           console.log(result)
@@ -87,7 +87,7 @@ const CashfreePG2= () => {
               const body = {
                 ...response,
               }
-              const validateRes = await fetch('https://crm-backend-blush-nine.vercel.app/order/validate', {
+              const validateRes = await fetch('https://crm-backend-wine.vercel.app/order/validate', {
                 method: 'POST',
                 body: JSON.stringify(body),
                 headers: {
@@ -97,7 +97,7 @@ const CashfreePG2= () => {
               const jsonRes = await validateRes.json()
              if(jsonRes.msg === "success"){
               console.log(jsonRes)
-               axios.post("https://crm-backend-blush-nine.vercel.app/wallet/easebuzzpg",value)
+               axios.post("https://crm-backend-wine.vercel.app/wallet/easebuzzpg",value)
                .then((response)=>{
                const result = response.data;
                if(result.message === "success"){
@@ -175,7 +175,7 @@ if (Object.keys(validateErrors).length === 0 ) {
 
 
   axios
-  .post('https://crm-backend-blush-nine.vercel.app/payment/link', value)
+  .post('https://crm-backend-wine.vercel.app/payment/link', value)
   .then((res) => {
     const result = res.data
    alert("payment link sent...")

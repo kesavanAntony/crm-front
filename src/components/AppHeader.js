@@ -24,7 +24,7 @@ const AppHeader = () => {
     },[])
 
     const listLoadWallet = () =>{
-      axios.get('https://crm-backend-blush-nine.vercel.app/list/loadWallet/sum')
+      axios.get('https://crm-backend-wine.vercel.app/list/loadWallet/sum')
       .then((res)=>{
       const result = res.data;
       updateList(result)

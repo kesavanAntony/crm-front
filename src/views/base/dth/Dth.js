@@ -34,7 +34,7 @@ const Dth = () => {
     },[])
 
     const dthListLoad = () =>{
-      axios.get('https://crm-backend-blush-nine.vercel.app/list/dth/recharge')
+      axios.get('https://crm-backend-wine.vercel.app/list/dth/recharge')
       .then((res)=>{
       const result = res.data;
       updateList(result)
@@ -77,7 +77,7 @@ const Dth = () => {
       if (Object.keys(validateErrors).length === 0 ) {
   
         axios
-          .post('https://crm-backend-blush-nine.vercel.app/order', value)
+          .post('https://crm-backend-wine.vercel.app/order', value)
           .then((res) => {
             const result = res.data
             console.log(result)
@@ -95,7 +95,7 @@ const Dth = () => {
                 const body = {
                   ...response,
                 }
-                const validateRes = await fetch('https://crm-backend-blush-nine.vercel.app/order/validate', {
+                const validateRes = await fetch('https://crm-backend-wine.vercel.app/order/validate', {
                   method: 'POST',
                   body: JSON.stringify(body),
                   headers: {
@@ -106,7 +106,7 @@ const Dth = () => {
                 console.log(jsonRes)
                 if(jsonRes.msg === "success"){
                
-                 axios.post("https://crm-backend-blush-nine.vercel.app/dth/recharge",value)
+                 axios.post("https://crm-backend-wine.vercel.app/dth/recharge",value)
                  .then((response)=>{
                  const result = response.data;
                  if(result.message === "success"){
@@ -120,7 +120,7 @@ const Dth = () => {
                  })
                }
               //  if(jsonRes.msg === "success"){
-              //   axios.post("https://crm-backend-blush-nine.vercel.app/mobile/recharge/payment",jsonRes)
+              //   axios.post("https://crm-backend-wine.vercel.app/mobile/recharge/payment",jsonRes)
               //   .then((response)=>{
               //   const result = response.data;
               //   if(result.message === "success"){
@@ -197,7 +197,7 @@ const Dth = () => {
   
   
     axios
-    .post('https://crm-backend-blush-nine.vercel.app/payment/link', value)
+    .post('https://crm-backend-wine.vercel.app/payment/link', value)
     .then((res) => {
       const result = res.data
       window.alert("payment link sent...")

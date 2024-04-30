@@ -40,7 +40,7 @@ const Mobile = () => {
 
   const listMobileRecharge = () =>{
     axios
-    .get('https://crm-backend-blush-nine.vercel.app/list/mobile/recharge')
+    .get('https://crm-backend-wine.vercel.app/list/mobile/recharge')
     .then((res) => {
       const result = res.data
       updateList(result)
@@ -90,7 +90,7 @@ if (Object.keys(validateErrors).length === 0 ) {
 
 
   axios
-  .post('https://crm-backend-blush-nine.vercel.app/payment/link', value)
+  .post('https://crm-backend-wine.vercel.app/payment/link', value)
   .then((res) => {
     const result = res.data
    alert("payment link sent...")
@@ -139,7 +139,7 @@ console.log(err)
         
     
       axios
-        .post('https://crm-backend-blush-nine.vercel.app/order', value)
+        .post('https://crm-backend-wine.vercel.app/order', value)
         .then((res) => {
           const result = res.data
           console.log(result)
@@ -157,7 +157,7 @@ console.log(err)
               const body = {
                 ...response,
               }
-              const validateRes = await fetch('https://crm-backend-blush-nine.vercel.app/order/validate', {
+              const validateRes = await fetch('https://crm-backend-wine.vercel.app/order/validate', {
                 method: 'POST',
                 body: JSON.stringify(body),
                 headers: {
@@ -168,7 +168,7 @@ console.log(err)
               console.log(jsonRes)
              if(jsonRes.msg === "success"){
              
-               axios.post("https://crm-backend-blush-nine.vercel.app/mobile/recharge",value)
+               axios.post("https://crm-backend-wine.vercel.app/mobile/recharge",value)
                .then((response)=>{
                const result = response.data;
                if(result.message === "success"){
@@ -393,4 +393,4 @@ console.log(err)
 
 export default Mobile
 
-// https://crm-backend-blush-nine.vercel.app
+// https://crm-backend-wine.vercel.app
