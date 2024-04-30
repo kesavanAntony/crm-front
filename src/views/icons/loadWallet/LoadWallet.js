@@ -41,7 +41,7 @@ const LoadWallet = () => {
     },[])
 
     const listLoadWallet = () =>{
-      axios.get('https://backend-razo.vercel.app/list/loadWallet')
+      axios.get('https://crm-backend-blush-nine.vercel.app/list/loadWallet')
       .then((res)=>{
       const result = res.data;
       updateList(result)
@@ -88,7 +88,7 @@ const LoadWallet = () => {
     if (Object.keys(validateErrors).length === 0 ) {
 
       axios
-        .post('https://backend-razo.vercel.app/order', value)
+        .post('https://crm-backend-blush-nine.vercel.app/order', value)
         .then((res) => {
           const result = res.data
           console.log(result)
@@ -98,7 +98,7 @@ const LoadWallet = () => {
             key: 'rzp_live_KxLmp2zN6kUt9n', // Enter the Key ID generated from the Dashboard
             amount: result.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             currency: result.currency,
-            name: 'Razo Trans Utility', //your business name
+            name: 'Optimista', //your business name
             description: 'Test Transaction',
             image:"https://app.gemoo.com/share/image-annotation/627135246211112960?codeId=vJ32leWg3Jjao&origin=imageurlgenerator",
             order_id: result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
@@ -106,7 +106,7 @@ const LoadWallet = () => {
               const body = {
                 ...response,
               }
-              const validateRes = await fetch('https://backend-razo.vercel.app/order/validate', {
+              const validateRes = await fetch('https://crm-backend-blush-nine.vercel.app/order/validate', {
                 method: 'POST',
                 body: JSON.stringify(body),
                 headers: {
@@ -117,7 +117,7 @@ const LoadWallet = () => {
               console.log(jsonRes)
              if(jsonRes.msg === "success"){
              
-               axios.post("https://backend-razo.vercel.app/loadwallet",value)
+               axios.post("https://crm-backend-blush-nine.vercel.app/loadwallet",value)
                .then((response)=>{
                const result = response.data;
                if(result.message === "success"){
@@ -138,7 +138,7 @@ const LoadWallet = () => {
               contact: '044-45270126', //Provide the customer's phone number for better conversion rates
             },
             notes: {
-              address: 'Razorpay Corporate Office',
+              address: 'Optimista',
             },
             theme: {
               color: '#3399cc',
@@ -192,7 +192,7 @@ if (Object.keys(validateErrors).length === 0 ) {
 
 
   axios
-  .post('https://backend-razo.vercel.app/payment/link', value)
+  .post('https://crm-backend-blush-nine.vercel.app/payment/link', value)
   .then((res) => {
     const result = res.data
    alert("payment link sent...")

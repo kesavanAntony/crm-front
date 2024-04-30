@@ -28,7 +28,7 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
-        <img src={require('../assets/images/rtu.png')} height={35} alt="" />
+      <a href='#' className='fs-3 text-decoration-none text-light'>OPTIMISTA</a>
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>

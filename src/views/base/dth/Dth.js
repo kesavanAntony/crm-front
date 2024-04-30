@@ -34,7 +34,7 @@ const Dth = () => {
     },[])
 
     const dthListLoad = () =>{
-      axios.get('https://backend-razo.vercel.app/list/dth/recharge')
+      axios.get('https://crm-backend-blush-nine.vercel.app/list/dth/recharge')
       .then((res)=>{
       const result = res.data;
       updateList(result)
@@ -77,7 +77,7 @@ const Dth = () => {
       if (Object.keys(validateErrors).length === 0 ) {
   
         axios
-          .post('https://backend-razo.vercel.app/order', value)
+          .post('https://crm-backend-blush-nine.vercel.app/order', value)
           .then((res) => {
             const result = res.data
             console.log(result)
@@ -87,7 +87,7 @@ const Dth = () => {
               key: 'rzp_live_KxLmp2zN6kUt9n', // Enter the Key ID generated from the Dashboard
               amount: result.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
               currency: result.currency,
-              name: 'Razo Trans Utility', //your business name
+              name: 'Optimista', //your business name
               description: 'Test Transaction',
               image:"https://app.gemoo.com/share/image-annotation/627135246211112960?codeId=vJ32leWg3Jjao&origin=imageurlgenerator",
               order_id: result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
@@ -95,7 +95,7 @@ const Dth = () => {
                 const body = {
                   ...response,
                 }
-                const validateRes = await fetch('https://backend-razo.vercel.app/order/validate', {
+                const validateRes = await fetch('https://crm-backend-blush-nine.vercel.app/order/validate', {
                   method: 'POST',
                   body: JSON.stringify(body),
                   headers: {
@@ -106,7 +106,7 @@ const Dth = () => {
                 console.log(jsonRes)
                 if(jsonRes.msg === "success"){
                
-                 axios.post("https://backend-razo.vercel.app/dth/recharge",value)
+                 axios.post("https://crm-backend-blush-nine.vercel.app/dth/recharge",value)
                  .then((response)=>{
                  const result = response.data;
                  if(result.message === "success"){
@@ -120,7 +120,7 @@ const Dth = () => {
                  })
                }
               //  if(jsonRes.msg === "success"){
-              //   axios.post("https://backend-razo.vercel.app/mobile/recharge/payment",jsonRes)
+              //   axios.post("https://crm-backend-blush-nine.vercel.app/mobile/recharge/payment",jsonRes)
               //   .then((response)=>{
               //   const result = response.data;
               //   if(result.message === "success"){
@@ -140,7 +140,7 @@ const Dth = () => {
                 contact: '044-45270126', //Provide the customer's phone number for better conversion rates
               },
               notes: {
-                address: 'Razorpay Corporate Office',
+                address: 'Optimista',
               },
               theme: {
                 color: '#3399cc',
@@ -197,7 +197,7 @@ const Dth = () => {
   
   
     axios
-    .post('https://backend-razo.vercel.app/payment/link', value)
+    .post('https://crm-backend-blush-nine.vercel.app/payment/link', value)
     .then((res) => {
       const result = res.data
       window.alert("payment link sent...")

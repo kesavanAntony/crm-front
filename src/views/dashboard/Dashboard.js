@@ -219,7 +219,7 @@ const Dashboard = () => {
                         <CIcon icon={cilPhone} className="me-2" />
                         Call Us:
                       </h6>
-                      <p className="">9941021198</p>
+                      <p className="">+91 82200 52520</p>
                       <h6 className='p-1'><CIcon icon={cilSend} className="me-2" />Email Us:</h6>
                       <p className="">xyz@gmail.com</p>
                     </td>

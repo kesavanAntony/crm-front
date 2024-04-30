@@ -9,7 +9,7 @@ const Header = () => {
     <div className='sticky-top'>
      <Navbar bg="dark" expand="lg" data-bs-theme="dark">
         <Container className='d-flex'>
-          <Navbar.Brand href="#home">Razo Trans Utility</Navbar.Brand>
+          <Navbar.Brand href="#home">Optimista</Navbar.Brand>
           
           <Navbar.Toggle aria-controls="basic-navbar-nav" className='' />
           <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>

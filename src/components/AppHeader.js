@@ -24,7 +24,7 @@ const AppHeader = () => {
     },[])
 
     const listLoadWallet = () =>{
-      axios.get('https://backend-razo.vercel.app/list/loadWallet/sum')
+      axios.get('https://crm-backend-blush-nine.vercel.app/list/loadWallet/sum')
       .then((res)=>{
       const result = res.data;
       updateList(result)
@@ -49,7 +49,8 @@ const AppHeader = () => {
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
         <CHeaderBrand className="mx-auto d-md-none">
-          <img src={require('../assets/images/rtu.png')} height={45} alt="" />
+          {/* <img src={require('../assets/images/rtu.png')} height={45} alt="" /> */}
+          <a href='#' className='fw-3'>Optimista</a>
         </CHeaderBrand>
         <CHeaderNav className="d-none d-md-flex me-auto justify-content-end">
           <CNavItem>

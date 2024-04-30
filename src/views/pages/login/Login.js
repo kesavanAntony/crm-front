@@ -27,7 +27,7 @@ const navigate = useNavigate('');
 
 const loadRender = () =>{
   axios
-  .get('https://backend-razo.vercel.app')
+  .get('https://crm-backend-blush-nine.vercel.app')
   .then((res) => {
     if (res.data.valid) {
       navigate("/")
@@ -60,7 +60,7 @@ const loadRender = () =>{
     else {
       setValidated(true)
       console.log(value)
-     const url = 'https://backend-razo.vercel.app/login'
+     const url = 'https://crm-backend-blush-nine.vercel.app/login'
       axios
         .post(url, value)
         .then((res) => {
